@@ -8,12 +8,19 @@ class TodoContainer extends React.Component {
     this.state ={
       todos: ["Eat", "Sleep", "Repeat"]
     }
+    this.handleTodoSubmit = this.handleTodoSubmit.bind(this);
+  }
+
+  handleTodoSubmit(todo){
+    this.setState({todos: [...this.state.todos, todo]}) //square operator
+    // const newTodoArray = this.state.todos.concat([todo]);
+    // this.setState({todos: newTodoArray});
   }
 
   render(){
     return(
       <React.Fragment>
-        <TodoForm/>
+        <TodoForm onTodoSubmit={this.handleTodoSubmit}/>
         <TodosList todos={this.state.todos}/>
       </React.Fragment>
     )
