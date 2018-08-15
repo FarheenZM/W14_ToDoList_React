@@ -1,16 +1,17 @@
 import React from 'react';
+import TodosList from '../components/TodosList'
 
 class TodoContainer extends React.Component {
   constructor(props){
     super(props);
     this.state ={
-      todos: []
+      todos: ["Eat", "Sleep", "Repeat"]
     }
   }
 
   render(){
     return(
-      <h1>Here come the todos</h1>
+      <TodosList todos={this.state.todos}/>
     )
   }
 }
