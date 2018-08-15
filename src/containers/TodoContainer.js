@@ -1,5 +1,6 @@
 import React from 'react';
-import TodosList from '../components/TodosList'
+import TodosList from '../components/TodosList';
+import TodoForm from '../components/TodoForm';
 
 class TodoContainer extends React.Component {
   constructor(props){
@@ -11,7 +12,10 @@ class TodoContainer extends React.Component {
 
   render(){
     return(
-      <TodosList todos={this.state.todos}/>
+      <React.Fragment>
+        <TodoForm/>
+        <TodosList todos={this.state.todos}/>
+      </React.Fragment>
     )
   }
 }
